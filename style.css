@@ -1,0 +1,46 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 130%;
+    /* 1rem=10px; 10px/16px default size=62.5% */
+}
+
+body {
+    font-family: "Montserrat Alternates", sans-serif;
+    font-weight: 300;
+    background-image: linear-gradient(to bottom, #edeef3, #ced1d9);
+    min-height: 100vh;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: 600px;
+    background-color: white;
+    color: black;
+    margin: 8% auto;
+    /* text-align: center; */
+    border: none;
+}
+
+.calculator-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin: 70px 10px 20px 10px;
+}
+
+#actions {
+    color: #cfd2da;
+}
+#answer {
+    font-size: 300%;
+}
