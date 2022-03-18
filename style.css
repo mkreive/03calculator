@@ -10,13 +10,14 @@ html {
     box-sizing: border-box;
     font-size: 130%;
     /* 1rem=10px; 10px/16px default size=62.5% */
+    width: 100%;
+    height: 100%;
 }
 
 body {
     font-family: "Montserrat Alternates", sans-serif;
     font-weight: 300;
     background-image: linear-gradient(to bottom, #edeef3, #ced1d9);
-    min-height: 100vh;
 }
 
 .wrapper {
@@ -27,7 +28,6 @@ body {
     background-color: white;
     color: black;
     margin: 8% auto;
-    /* text-align: center; */
     border: none;
 }
 
@@ -43,4 +43,24 @@ body {
 }
 #answer {
     font-size: 300%;
+}
+
+.calculator-buttons {
+    display: flex;
+    flex-direction: column;
+    background-color: #6dd0ab;
+    font-size: 200%;
+    font-weight: 200;
+}
+
+.row {
+    display: flex;
+    justify-content: space-evenly;
+    border: 1px solid #ffffff;
+    padding: 12px 0;
+}
+button {
+    flex-basis: 10%;
+    border-right: 1px solid #ffffff;
+    cursor: pointer;
 }
