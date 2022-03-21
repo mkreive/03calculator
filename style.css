@@ -59,12 +59,30 @@ body {
 
 .row {
     display: flex;
+    /* border: 1px solid #ffffff; */
+    height: 20%;
+    width: 100%;
     justify-content: space-evenly;
-    border: 1px solid #ffffff;
-    padding: 12px 0;
 }
 button {
-    flex-basis: 10%;
-    border-right: 1px solid #ffffff;
+    position: relative;
+    flex-basis: 20%;
+    font-size: 50%;
+    border: none;
     cursor: pointer;
+    color: black;
+    padding: 30px 45px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    background-color: #6dd0ab;
+}
+button:hover,
+button:active {
+    background-color: #e56278;
+}
+
+.number:hover,
+.number:active {
+    background-color: #5ccaf6;
 }
