@@ -4,14 +4,26 @@
 const actionsElement = document.getElementById("actions");
 const answerElement = document.getElementById("answer");
 
-const numberButtons = document.querySelectorAll(".number");
-
-const actionButtons = document.querySelectorAll(".actions");
+const buttons = document.querySelectorAll("button");
 
 // Code
+actionsElement.innerText = "";
+let number = [];
+let actions = [];
 
-for (let button of numberButtons) {
+for (let button of buttons) {
     button.addEventListener("click", function () {
-        console.log(button.innerText);
+        let btnValue = button.innerText;
+
+        if (button.classList.contains("number")) {
+            number.push(btnValue);
+            actionsElement.innerText = number.join("");
+            console.log(number);
+        }
+        if (button.classList.contains("actions")) {
+            actions.push([number.join(""), btnValue]);
+            number = [];
+            console.log(actions);
+        }
     });
 }
