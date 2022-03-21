@@ -77,12 +77,10 @@ button {
     font-size: inherit;
     font-weight: 100;
 }
-button:hover,
-button:active {
+button:hover:focus:active {
     background-color: #e56278;
 }
 
-.number:hover,
-.number:active {
+.number:hover:focus:active {
     background-color: #5ccaf6;
 }
