@@ -3,22 +3,20 @@
 // Selectors
 const inputElement = document.getElementById("input");
 const answerElement = document.getElementById("answer");
-
-const numbers = document.querySelectorAll(".number");
-const actions = document.querySelectorAll(".actions");
+const buttons = document.querySelectorAll("button");
 
 // Code
-inputElement.innerText = "0";
-let numberString = [];
+inputElement.innerText = "";
+let actionsArray = [];
 
-for (let number of numbers) {
-    number.addEventListener("click", function () {
-        let clickedNumber = number.innerText;
+for (let button of buttons) {
+    button.addEventListener("click", function () {
+        let clickedButton = button.innerText;
+        inputElement.innerText += clickedButton;
 
-        if (number.classList.contains("number")) {
-            numberString.push(clickedNumber);
-            inputElement.innerText = numberString.join("");
-            console.log(numberString);
+        if (button.innerText === "=") {
+            actionsArray = inputElement.innerText.slice(0, -1);
+            inputElement.innerText = "";
         }
     });
 }
