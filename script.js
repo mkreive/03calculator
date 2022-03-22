@@ -2,34 +2,46 @@
 
 // Selectors
 const inputElement = document.getElementById("input");
-const answerElement = document.getElementById("answer");
 const buttons = document.querySelectorAll("button");
 
 // Code
+let result = [];
 
-for (let button of buttons) {
+buttons.forEach((button) => {
     button.addEventListener("click", function () {
         let clickedButton = button.innerText;
-        prevButton = button;
         let inputValue = inputElement.innerHTML;
-        inputElement.innerText += clickedButton;
-        console.log(clickedButton);
-
-        // if (button.classList.contains("actions") &&)
 
         if (clickedButton === "C") {
-            inputElement.innerText = "";
-            answerElement.innerText = "";
+            result = [];
         } else if (clickedButton === "=") {
-            inputElement.innerText = inputValue.split(0, -1);
-            let equation = inputValue;
+            // inputElement.innerText = inputValue.split(0, -1);
+            let equation = result.join("");
 
             equation = equation
                 .replace(/x/g, "*")
                 .replace(/÷/g, "/")
                 .replace(/\^/g, "**");
-            console.log(equation);
+
             answerElement.innerText = eval(equation);
         }
+
+        let lastIndex = result.length - 1;
+        let lastChar = result[lastIndex];
+
+        if (!isNaN(lastChar) && !isNaN(clickedButton) && result.length > 0) {
+            result[lastIndex] = lastChar + clickedButton;
+        } else if (
+            isNaN(lastChar) &&
+            isNaN(clickedButton) &&
+            result.length > 0
+        ) {
+            result[lastIndex] = clickedButton;
+        } else {
+            if (clickedButton != "C") result.push(clickedButton);
+        }
+
+        inputElement.innerText = result.join("");
+        console.log(result);
     });
-}
+});
