@@ -29,7 +29,7 @@ body {
     border: none;
 }
 
-.calculator-actions {
+.calculator-display {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -42,7 +42,7 @@ body {
     transition: all 0.2s ease-in-out;
 }
 
-#actions {
+#input {
     color: #cfd2da;
 }
 #answer {
